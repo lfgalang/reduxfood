@@ -1,10 +1,16 @@
+import { Provider } from 'react-redux';
 import './App.css';
+import RestaurantStore from './components/redux/Store.jsx';
 import Restaurant from './components/Restaurant';
 
 function App() {
   return (
     <div className="App">
-      <Restaurant />
+      {/* Para hacerle saber a react que hay un store se usa el provider */}
+      <Provider store={RestaurantStore} >
+        <Restaurant />
+      </Provider>
+      
     </div>
   );
 }
