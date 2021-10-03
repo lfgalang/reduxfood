@@ -8,7 +8,13 @@ function Restaurant() {
 
     return (
         <div>
-            <form>
+            <form
+                onSubmit={(event) => {
+                    //El event.preventDefault() se usa para no se actualice la página sino que se se agrguen a la consola
+                    event.preventDefault();
+                    console.log(restaurantState)
+                }}
+            >
                 <div className="form-group">
                     <label htmlFor="">Name</label>
                     <input 
