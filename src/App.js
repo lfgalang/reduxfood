@@ -1,6 +1,6 @@
 import { Provider } from 'react-redux';
 import './App.css';
-import RestaurantStore from './components/redux/Store.jsx';
+import RestaurantStore from './redux/Store.jsx';
 import Restaurant from './components/Restaurant';
 
 function App() {
