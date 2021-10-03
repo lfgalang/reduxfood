@@ -1,9 +1,9 @@
 
 
 //initial state
-const restaurantState = [];
+const restaurantState = [1, 232654];
 
-const RestaurantReducer = (state, action) => {
+const RestaurantReducer = (state = restaurantState , action) => {
     return state;
 };
 
