@@ -36,6 +36,7 @@ function FoodList(props) {
 
 //Se puede llamar como se desee
 const mapStateToProps = (state) => {
+    console.log(state)
     return {
         //Lo que permite esta función es hacer lo mismo que el redux pero se puede imprimir en pantalla con un JSON.stringlify
         //Así es como se obtienen los datos

@@ -10,10 +10,10 @@ function App() {
     <div className="App">
       
         <Restaurant /> 
+        <Food />
         <RestaurantList />
         <FoodList />
-
-        <Food />
+        
       
     </div>
   );
