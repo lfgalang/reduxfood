@@ -4,15 +4,29 @@ import "./list.css"
 
 function List(props) {
 
-    const { restaurantList } = props;
+    const { restaurantList, remove } = props;
 
     return (
         <div>
             <ul className="list-group">
                 {restaurantList.map((d,i) => (
-                    <li className="list-group-item" key={i} >
-                        {d.name}
-                    </li>
+                    <div key={i} >                        
+                        <span className="letras">
+                            <li className="list-group-item">
+                                {d.name} - {d.location}
+                            </li>
+                        </span>
+                        <span className="boton">
+                            <button 
+                                className=" btn btn-danger" 
+                                onClick={()=> {
+                                    remove(i)
+                                }} 
+                            >
+                                delete
+                            </button>
+                        </span>
+                    </div>
                 ))}
             </ul>
         </div>
@@ -31,10 +45,10 @@ const mapStateToProps = (state) => {
 // Los datos van a ser enviados al reducer
 const mapDispatchToProps = (dispatch) => {
     return{
-        add: (res) => {
+        remove: (index) => {
             // console.log(res)
             //Payload son datos que se necesitan pasar al reducer
-            dispatch({ type: "ADD", payload: res })
+            dispatch({ type: "REMOVE", payload: index })
         }
     }
 };
