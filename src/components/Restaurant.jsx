@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux';
-import { AddRestaurantAction } from '../redux/RestaurantActionType';
+import { AddRestaurantAction } from '../redux/RestaurantAction';
 
 function Restaurant(props) {
 

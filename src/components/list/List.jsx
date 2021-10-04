@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux';
-import { RemoveRestaurantAction } from '../../redux/RestaurantActionType';
+import { RemoveRestaurantAction } from '../../redux/RestaurantAction';
 import "./list.css"
 
 function List(props) {

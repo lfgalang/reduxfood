@@ -7,11 +7,10 @@ import List from './components/list/List';
 function App() {
   return (
     <div className="App">
-      {/* Para hacerle saber a react que hay un store se usa el provider */}
-      <Provider store={RestaurantStore} >
+      
         <Restaurant />
         <List />
-      </Provider>
+      
       
     </div>
   );
