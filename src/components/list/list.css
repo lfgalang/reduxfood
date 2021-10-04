@@ -1,0 +1,23 @@
+.list-group {
+    padding-top: 10px;
+}
+
+.list-group-item {
+    margin-top: 10px;
+    border: solid 1px 1px 1px;
+    border-radius: 5px;
+}
+.letras{
+    width: 80vw;
+    text-align: left;
+    align-content: flex-start;
+    flex: 5;
+}
+
+.boton{
+    position: absolute;
+    margin-top: -45px;
+    flex: 2;
+    margin-left: 30vw;
+    /* align-items: flex-end; */
+}

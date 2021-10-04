@@ -1,3 +1,4 @@
+import { RestaurantActionType } from "./RestaurantActionType";
 
 
 //initial state
@@ -7,13 +8,19 @@ const restaurantState = [];
 const RestaurantReducer = (state = restaurantState , action) => {
     console.log(action)
     // Para que agregue el estado a redux
-    if (action.type === "ADD"){
-        //El push es para que lleve los datos a redux
-        state.push(action.payload);
-        //Los tres puntos es para que arme el objeto y lo añada adicionalmente en el state raw
-        return [...state];
+    switch (action.type) {
+        case RestaurantActionType.ADD: 
+            //El push es para que lleve los datos a redux
+            state.push(action.payload);
+            //Los tres puntos es para que arme el objeto y lo añada adicionalmente en el state raw
+            return [...state];
+        
+        case RestaurantActionType.REMOVE:
+            state.splice(action.payload,1)
+            return [...state];
+        default:
+            return state;
     }
-    return state;
 };
 
 export default RestaurantReducer

@@ -1,11 +1,10 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux';
+import { AddRestaurantAction } from '../redux/RestaurantActionType';
 
 function Restaurant(props) {
 
-    const [restaurantState, setRestauranteState] = useState({
-
-    })
+    const [restaurantState, setRestauranteState] = useState({})
     const { restaurantList, add } = props;
 
     return (
@@ -48,7 +47,7 @@ function Restaurant(props) {
                 <button type="submit" className="btn btn-primary">
                     Submit
                 </button>
-                {JSON.stringify(restaurantList)}
+                {/* {JSON.stringify(restaurantList)} */}
             </form>
         </div>
     )
@@ -69,7 +68,7 @@ const mapDispatchToProps = (dispatch) => {
         add: (res) => {
             // console.log(res)
             //Payload son datos que se necesitan pasar al reducer
-            dispatch({ type: "ADD", payload: res })
+            dispatch(AddRestaurantAction(res))
         }
     }
 };
