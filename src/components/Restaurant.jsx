@@ -48,7 +48,7 @@ function Restaurant(props) {
                 <button type="submit" className="btn btn-primary">
                     Submit
                 </button>
-                {JSON.stringify(restaurantState)}
+                {JSON.stringify(restaurantList)}
             </form>
         </div>
     )
@@ -57,6 +57,8 @@ function Restaurant(props) {
 //Se puede llamar como se desee
 const mapStateToProps = (state) => {
     return {
+        //Lo que permite esta función es hacer lo mismo que el redux pero se puede imprimir en pantalla con un JSON.stringlify
+        //Así es como se obtienen los datos
         restaurantList: state,
     };
 };
