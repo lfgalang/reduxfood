@@ -1,22 +1,16 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux';
-import { AddRestaurantAction } from '../redux/RestaurantActionType';
+import { AddRestaurantAction } from '../redux/RestaurantAction';
 
 function Restaurant(props) {
 
     const [restaurantState, setRestauranteState] = useState({})
-    const { restaurantList, add } = props;
+    const { restaurantList, addRestaurant } = props;
 
     return (
         <div>
-            
             <form
-                onSubmit={(event) => {
-                    //El event.preventDefault() se usa para no se actualice la página sino que se se agrguen a la consola
-                    event.preventDefault();
-                    // console.log(restaurantState)
-                    add(restaurantState)
-                }}
+                
             >
                 <div className="form-group">
                     <label htmlFor="">Name</label>
@@ -44,8 +38,17 @@ function Restaurant(props) {
                         }}
                     />
                 </div>
-                <button type="submit" className="btn btn-primary">
-                    Submit
+                <button 
+                    type="submit" 
+                    className="btn btn-primary"
+                    onClick={(event) => {
+                        //El event.preventDefault() se usa para no se actualice la página sino que se se agrguen a la consola
+                        event.preventDefault();
+                        // console.log(restaurantState)
+                        addRestaurant(restaurantState)
+                    }}
+                >
+                    Restaurant
                 </button>
                 {/* {JSON.stringify(restaurantList)} */}
             </form>
@@ -55,17 +58,19 @@ function Restaurant(props) {
 
 //Se puede llamar como se desee
 const mapStateToProps = (state) => {
+    // console.log("state")
+    // console.log(state)
     return {
         //Lo que permite esta función es hacer lo mismo que el redux pero se puede imprimir en pantalla con un JSON.stringlify
         //Así es como se obtienen los datos
-        restaurantList: state,
+        restaurantList: state.restaurant,
     };
 };
 
 // Los datos van a ser enviados al reducer
 const mapDispatchToProps = (dispatch) => {
     return{
-        add: (res) => {
+        addRestaurant: (res) => {
             // console.log(res)
             //Payload son datos que se necesitan pasar al reducer
             dispatch(AddRestaurantAction(res))

@@ -1,17 +1,19 @@
-import { Provider } from 'react-redux';
+
 import './App.css';
-import RestaurantStore from './redux/Store.jsx';
 import Restaurant from './components/Restaurant';
-import List from './components/list/List';
+import Food from './components/Food';
+import RestaurantList from './components/list/RestaurantList';
+import FoodList from './components/list/FoodList';
 
 function App() {
   return (
     <div className="App">
-      {/* Para hacerle saber a react que hay un store se usa el provider */}
-      <Provider store={RestaurantStore} >
-        <Restaurant />
-        <List />
-      </Provider>
+      
+        <Restaurant /> 
+        <RestaurantList />
+        <FoodList />
+
+        <Food />
       
     </div>
   );

@@ -1,20 +1,20 @@
 import React from 'react'
 import { connect } from 'react-redux';
-import { RemoveRestaurantAction } from '../../redux/RestaurantActionType';
+import { RemoveFoodAction } from '../../redux/FoodAction';
 import "./list.css"
 
-function List(props) {
+function FoodList(props) {
 
-    const { restaurantList, remove } = props;
+    const { foodList, remove } = props;
 
     return (
         <div>
             <ul className="list-group">
-                {restaurantList.map((d,i) => (
+                {foodList.map((f,i) => (
                     <div key={i} >                        
                         <span className="letras">
                             <li className="list-group-item">
-                                {d.name} - {d.location}
+                                {f.primero} - {f.segundo}
                             </li>
                         </span>
                         <span className="boton">
@@ -39,20 +39,22 @@ const mapStateToProps = (state) => {
     return {
         //Lo que permite esta función es hacer lo mismo que el redux pero se puede imprimir en pantalla con un JSON.stringlify
         //Así es como se obtienen los datos
-        restaurantList: state,
+        restaurantList: state.restaurant,
+        foodList: state.food
     };
 };
 
 // Los datos van a ser enviados al reducer
-const mapDispatchToProps = (dispatch) => {
+
+const mapDispatchToPropsFood = (dispatch) => {
     return{
         remove: (index) => {
             // console.log(res)
             //Payload son datos que se necesitan pasar al reducer
-            dispatch(RemoveRestaurantAction(index))
+            dispatch(RemoveFoodAction(index))
         }
     }
 };
 
+export default connect(mapStateToProps, mapDispatchToPropsFood)(FoodList);
 
-export default connect(mapStateToProps, mapDispatchToProps)(List);
