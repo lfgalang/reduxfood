@@ -39,7 +39,6 @@ const mapStateToProps = (state) => {
     return {
         //Lo que permite esta función es hacer lo mismo que el redux pero se puede imprimir en pantalla con un JSON.stringlify
         //Así es como se obtienen los datos
-        restaurantList: state.restaurant,
         foodList: state.food
     };
 };
