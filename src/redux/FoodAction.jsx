@@ -1,8 +1,8 @@
 
 
 const foodActionType = {
-    ADD = "ADD_Food",
-    REMOVE = "REMOVE_Food"
+    ADD: "ADD_Food",
+    REMOVE: "REMOVE_Food"
 }
 
 const AddFoodAction = (res) => {

@@ -5,7 +5,7 @@ import { restaurantActionType } from "./RestaurantAction";
 const restaurantState = [];
 
 // Lo impresionante es que se genera la conección sin importar o exportar las funciones
-const RestaurantReducer = (state = restaurantState , action) => {
+const restaurantReducer = (state = restaurantState , action) => {
     console.log(action)
     // Para que agregue el estado a redux
     switch (action.type) {
@@ -23,4 +23,4 @@ const RestaurantReducer = (state = restaurantState , action) => {
     }
 };
 
-export default RestaurantReducer
+export default restaurantReducer
