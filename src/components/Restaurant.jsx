@@ -3,9 +3,7 @@ import { connect } from 'react-redux';
 
 function Restaurant(props) {
 
-    const [restaurantState, setRestauranteState] = useState({
-
-    })
+    const [restaurantState, setRestauranteState] = useState({})
     const { restaurantList, add } = props;
 
     return (
@@ -48,7 +46,7 @@ function Restaurant(props) {
                 <button type="submit" className="btn btn-primary">
                     Submit
                 </button>
-                {JSON.stringify(restaurantList)}
+                {/* {JSON.stringify(restaurantList)} */}
             </form>
         </div>
     )

@@ -1,0 +1,10 @@
+.list-group {
+    padding-top: 10px;
+}
+
+.list-group-item {
+    margin-top: 10px;
+    border: solid 1px 1px 1px;
+    border-radius: 5px;
+    text-align: justify;
+}

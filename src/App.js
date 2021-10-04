@@ -2,6 +2,7 @@ import { Provider } from 'react-redux';
 import './App.css';
 import RestaurantStore from './redux/Store.jsx';
 import Restaurant from './components/Restaurant';
+import List from './components/list/List';
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       {/* Para hacerle saber a react que hay un store se usa el provider */}
       <Provider store={RestaurantStore} >
         <Restaurant />
+        <List />
       </Provider>
       
     </div>
