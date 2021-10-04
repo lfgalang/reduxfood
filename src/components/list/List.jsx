@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux';
+import { RemoveRestaurantAction } from '../../redux/RestaurantActionType';
 import "./list.css"
 
 function List(props) {
@@ -48,7 +49,7 @@ const mapDispatchToProps = (dispatch) => {
         remove: (index) => {
             // console.log(res)
             //Payload son datos que se necesitan pasar al reducer
-            dispatch({ type: "REMOVE", payload: index })
+            dispatch(RemoveRestaurantAction(index))
         }
     }
 };

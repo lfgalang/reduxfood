@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux';
+import { AddRestaurantAction } from '../redux/RestaurantActionType';
 
 function Restaurant(props) {
 
@@ -67,7 +68,7 @@ const mapDispatchToProps = (dispatch) => {
         add: (res) => {
             // console.log(res)
             //Payload son datos que se necesitan pasar al reducer
-            dispatch({ type: "ADD", payload: res })
+            dispatch(AddRestaurantAction(res))
         }
     }
 };
