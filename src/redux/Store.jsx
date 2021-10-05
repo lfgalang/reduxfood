@@ -1,10 +1,12 @@
 import { combineReducers, createStore } from "redux";
 import foodReducer from "./FoodReducer";
 import restaurantReducer from "./RestaurantReducer";
+import userReducer from "./UserReducer";
 
 const rootReducer = {
     restaurant: restaurantReducer,
-    food: foodReducer
+    food: foodReducer,
+    user: userReducer,
 }
 
 
