@@ -20,7 +20,8 @@ function User(props) {
 }
 
 const mapStateToProps = (props) => {
-    console.log(props)
+
+    console.log(props.user.filter(x => x.userId === 5))
     return {        
         // state: state,
     };
