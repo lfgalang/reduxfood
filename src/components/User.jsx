@@ -1,4 +1,5 @@
 import React from 'react'
+import { connect } from 'react-redux'
 
 function User() {
     return (
@@ -7,5 +8,6 @@ function User() {
         </div>
     )
 }
+
 
 export default User
